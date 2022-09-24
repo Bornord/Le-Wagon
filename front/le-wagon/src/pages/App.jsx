@@ -9,15 +9,17 @@ import ErrorPage from './errorPage/ErrorPage';
 
 function App() {
 	return (
-		<Routes>
-			{/* Identification de l'utilisateur */}
-			<Route path="/" element={<RequireAuthorization />}>
-				{/* Liste des routes accessibles post identification */}
-				<Route path="/" element={<Home />} />
+		<div className="body">
+			<Routes>
+				{/* Identification de l'utilisateur */}
+				<Route path="/" element={<RequireAuthorization />}>
+					{/* Liste des routes accessibles post identification */}
+					<Route path="/" element={<Home />} />
+					<Route path="/*" element={<ErrorPage />} />
+				</Route>
 				<Route path="/*" element={<ErrorPage />} />
-			</Route>
-			<Route path="/*" element={<ErrorPage />} />
-		</Routes>
+			</Routes>
+		</div>
 	);
 }
 

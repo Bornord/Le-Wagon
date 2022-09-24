@@ -1,13 +1,13 @@
 // import de composants
 import Banner from '../../components/banner/Banner';
-import Card from '../../components/card/Card';
+import Content from '../../components/content/Content';
 import Footer from '../../components/footer/Footer';
 
 function Home() {
 	return (
 		<div>
 			<Banner />
-			<Card />
+			<Content />
 			<Footer />
 		</div>
 	);

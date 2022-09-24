@@ -1,9 +1,11 @@
 // import de composants
+import './Card.scss';
 
-function Card() {
+function Card(info) {
 	return (
 		<div>
-			<h1>Card</h1>
+			<img className="img" src={info.link} alt="123 tests" />
+			<h3>{info.content}</h3>
 		</div>
 	);
 }
