@@ -1,17 +1,49 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as ReactDOMClient from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { configureStore } from '@reduxjs/toolkit';
+// import { Provider } from 'react-redux';
+// import { PersistGate } from 'redux-persist/integration/react';
+// import { persistStore } from 'redux-persist';
+// import { combineReducers } from 'redux';
+// import { persistReducer } from 'redux-persist';
+// import thunk from 'redux-thunk';
+// import storage from 'redux-persist/lib/storage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Import de composants
+import './pages/App.scss';
+import App from './pages/App';
+// import ErrorPage from './pages/errorPage/ErrorPage';
+
+// // configuration de la persistance redux
+// const reducers = combineReducers({});
+// const persistConfig = {
+// 	key: 'root',
+// 	storage,
+// };
+// const persistedReducer = persistReducer(persistConfig, reducers);
+// const store = configureStore({
+// 	reducer: persistedReducer,
+// 	devTools: process.env.NODE_ENV !== 'production',
+// 	middleware: [thunk],
+// });
+// const persistor = persistStore(store);
+
+// Config du projet react
+const container = document.getElementById('root');
+const root = ReactDOMClient.createRoot(container);
+
+// C'est parti, on y va !
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<div className="App">
+		{/* <Provider store={store}> */}
+		{/* <PersistGate loading={null} persistor={persistor}> */}
+		<BrowserRouter>
+			<Routes>
+				<Route path="/*" element={<App />} />
+			</Routes>
+		</BrowserRouter>
+		{/* </PersistGate>
+		</Provider> */}
+	</div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
