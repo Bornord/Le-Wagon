@@ -6,11 +6,6 @@ function Content() {
 	return (
 		<div>
 			<h2>Promotions</h2>
-			<img
-				alt="shangai"
-				className="img"
-				src="https://images.unsplash.com/photo-1437418747212-8d9709afab22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80"
-			/>
 			<h3>Here you can find custom promotions !</h3>
 			<div className="wrapper">
 				<Card
